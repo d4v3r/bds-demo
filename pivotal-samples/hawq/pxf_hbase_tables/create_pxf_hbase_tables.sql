@@ -1,4 +1,4 @@
-DROP EXTERNAL TABLE retail_demo.categories_dim_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.categories_dim_hbase;
 CREATE EXTERNAL TABLE retail_demo.categories_dim_hbase
 (
     --category_id integer,
@@ -9,7 +9,7 @@ LOCATION ('pxf://pivhdsne:50070/categories_dim?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
-DROP EXTERNAL TABLE retail_demo.customers_dim_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.customers_dim_hbase;
 CREATE EXTERNAL TABLE retail_demo.customers_dim_hbase
 (
     -- customer_id integer,
@@ -21,7 +21,7 @@ CREATE EXTERNAL TABLE retail_demo.customers_dim_hbase
 LOCATION ('pxf://pivhdsne:50070/customers_dim?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
-DROP  EXTERNAL TABLE retail_demo.order_lineitems_hbase;
+DROP  EXTERNAL TABLE IF EXISTS retail_demo.order_lineitems_hbase;
 CREATE  EXTERNAL TABLE retail_demo.order_lineitems_hbase
 (
     recordkey integer,
@@ -61,7 +61,7 @@ CREATE  EXTERNAL TABLE retail_demo.order_lineitems_hbase
 LOCATION ('pxf://pivhdsne:50070/order_lineitems?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
-DROP EXTERNAL TABLE retail_demo.orders_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.orders_hbase;
 CREATE EXTERNAL TABLE retail_demo.orders_hbase
 (
     -- order_id TEXT,
@@ -102,7 +102,7 @@ LOCATION ('pxf://pivhdsne:50070/orders?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
-DROP EXTERNAL TABLE retail_demo.customer_addresses_dim_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.customer_addresses_dim_hbase;
 CREATE EXTERNAL TABLE retail_demo.customer_addresses_dim_hbase
 (
     recordkey integer,
@@ -125,7 +125,7 @@ LOCATION ('pxf://pivhdsne:50070/customer_addresses_dim?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
-DROP EXTERNAL TABLE retail_demo.date_dim_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.date_dim_hbase;
 CREATE EXTERNAL TABLE retail_demo.date_dim_hbase
 (
     recordkey integer,
@@ -140,7 +140,7 @@ LOCATION ('pxf://pivhdsne:50070/date_dim?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
-DROP EXTERNAL TABLE retail_demo.email_addresses_dim_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.email_addresses_dim_hbase;
 CREATE EXTERNAL TABLE retail_demo.email_addresses_dim_hbase
 (
     -- customer_id integer,
@@ -151,7 +151,7 @@ LOCATION ('pxf://pivhdsne:50070/email_addresses_dim?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
-DROP EXTERNAL TABLE retail_demo.payment_methods_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.payment_methods_hbase;
 CREATE EXTERNAL TABLE retail_demo.payment_methods_hbase
 (
     --payment_method_id smallint,
@@ -161,7 +161,7 @@ CREATE EXTERNAL TABLE retail_demo.payment_methods_hbase
 LOCATION ('pxf://pivhdsne:50070/payment_methods?profile=hbase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
-DROP EXTERNAL TABLE retail_demo.products_dim_hbase;
+DROP EXTERNAL TABLE IF EXISTS retail_demo.products_dim_hbase;
 CREATE EXTERNAL TABLE retail_demo.products_dim_hbase
 (
     -- product_id integer,
