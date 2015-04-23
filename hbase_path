@@ -1,2 +1,0 @@
-source /etc/hadoop/conf.empty/hadoop-env.sh
-export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:/usr/lib/gphd/hbase/lib/hbase-hadoop-compat.jar
