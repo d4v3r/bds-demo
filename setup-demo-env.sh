@@ -32,14 +32,13 @@ echo create external HDFS tables
 cat  pivotal-samples/hawq/pxf_tables/create_pxf_tables.sql | sed s/pivhdsne/$NAMENODE/ | psql
 
 echo drop existing hbase tables - ignore errors
-pivotal-samples/hawq/pxf_hbase_tables/load-hbase.sh
-
-echo load hbase tables
-pivotal-samples/hawq/pxf_hbase_tables/create_hbase_tables.pl
+pivotal-samples/hawq/pxf_hbase_tables/drop_hbase_tables.pl
 
 echo create hbase tables
 pivotal-samples/hawq/pxf_hbase_tables/create_hbase_tables.pl
 
+echo load hbase tables
+pivotal-samples/hawq/pxf_hbase_tables/load-hbase.sh
 
 echo create external hbase tables
 cat pivotal-samples/hawq/pxf_hbase_tables/create_pxf_hbase_tables.sql | sed s/pivhdsne/$NAMENODE/ | psql
