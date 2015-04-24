@@ -1,0 +1,29 @@
+
+start locator --name=locator1 --dir=/data/gemfire/locator1 --J=-Dgemfire.http-service-port=7575
+start server --name=server1 --dir=/data/gemfire/server1 --server-port=40411 --J=-Dgemfire.http-service-port=7576 --J=-Dgemfire.start-dev-rest-api=true
+start server --name=server2 --dir=/data/gemfire/server2 --server-port=40412 --J=-Dgemfire.http-service-port=7577
+
+
+stream create --name tweet --definition "twittersearch --query='GreysAnatomy' --outputType=application/json | transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
+
+stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
+
+stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
+
+stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
+
+CREATE external TABLE tweet_pxf(
+   id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255),
+   language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10))
+   location ('pxf://pivhdsne:50070/tweet-data/tweet-*.txt?profile=HdfsTextSimple')
+  FORMAT 'CSV' LOG ERRORS INTO tweet_err SEGMENT REJECT LIMIT 1000;
+
+
+  stream create gemfireTap --definition "tap:stream:tweet > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | transform --script=tweets-search.groovy --inputType=application/json  | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
+
+  destroy region --name=tweet
+  create region --name=tweet --type=PARTITION
+
+  describe region --name=tweet
+
+  curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=100
