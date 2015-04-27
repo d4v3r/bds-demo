@@ -19,7 +19,7 @@ def var_rand_id = java.util.UUID.randomUUID().toString()
           created_at var_createdAt
           text var_text
           language_code var_languageCode
-          retweet_count var_retweetCount
+          retweet_count var_retweetCount + 50000
           retweet var_retweet
 	}
 	
