@@ -1,24 +1,45 @@
-*** DEMO 1 - Twitter Search - GFXD - HAWQ ***
+*** DEMO 1 - Twitter Search - GemFire - HAWQ - SpringXD ***
 
-Pull tweets with 'hadoop' in them into spring XD then GXD and ultimately land in the data lake for further analysis with HAWQ.
+--pull data from twitter, see what is trending at twitter.com first
+stream create --name tweet --definition "twittersearch --query='GreysAnatomy' --outputType=application/json | transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
 
---Insert directly into GFXD
-create table tweet (id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255), language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10), PRIMARY KEY (id)) PARTITION BY PRIMARY KEY eviction by criteria (retweet_count <= 0) evict incoming hdfsstore (tweet) ;
+--set up analytic taps
+stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
+stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
+stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
 
---Spring XD Definition
-stream create --name tweet --definition "twittersearch --query='hadoop' --outputType=application/json | transform --script=tweets-search.groovy --inputType=application/json | jdbc --columns='id, from_user, created_at, text, language_code, retweet_count, retweet'" --deploy
+--pull the most popular tweets into GemFire
+stream create gemfireTap --definition "tap:stream:tweet > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | transform --script=tweets-search.groovy --inputType=application/json  | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
 
---HAWQ
+--examine all the data with HAWQ
 CREATE external TABLE tweet_pxf(
    id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255),
    language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10))
-   location ('pxf://pivhdsne:50070/tweet/APP.TWEET?PROFILE=GemFireXD&CHECKPOINT=false')
-  FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
-
-
-select count(*) from tweet --GEMFIREXD-PROPERTIES queryHDFS=true \n;
+   location ('pxf://pivhdsne:50070/tweet-data/tweet-*.txt?profile=HdfsTextSimple')
+  FORMAT 'CSV' LOG ERRORS INTO tweet_err SEGMENT REJECT LIMIT 1000;
 
 select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user order by total desc limit 10 ;
+
+select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc;
+
+
+--
+destroy region --name=tweet
+create region --name=tweet --type=PARTITION
+describe region --name=tweet
+--
+
+--GemFire Restful API
+curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=100
+
+--Bring up VM show the analytics app
+cd spring-xd-samples/analytics-dashboard/
+--start webserver
+./startWebServer.sh (there is a tab in the windows group for this)
+
+--Use firefox to browse to:
+http://localhost:9889/dashboard.html
+
 
 
 *** DEMO 2 - Map Reduce vs HAWQ***
@@ -48,40 +69,7 @@ select billing_address_postal_code, sum(total_paid_amount::float8) as total, sum
 
 
 
-
-***DEMO 3 - Twitter Stream into HDFS ***
-
-stream create --name twitterfeed --definition "twitterstream --readTimeout=0 --outputType=application/json | hdfs --rollover=1M --directory=/twitter-stream --fsUri=hdfs://pivhdsne:8020"
-
-stream create tweetlang  --definition "tap:stream:twitterfeed > field-value-counter --fieldName=lang" --deploy
-
-stream create tweetcount --definition "tap:stream:twitterfeed > aggregate-counter" --deploy
-
-stream create tagcount --definition "tap:stream:twitterfeed > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
-
-
-
---show the directory before, should be empty or you should clear it out
-hdfs dfs -ls /twitter-stream
-hdfs dfs -rm -r /twitter-stream
-hdfs dfs -mkdir /twitter-stream
-
-
---turn the stream on
-stream deploy tweets
-
---show the directory filling up with files
-hdfs dfs -ls /twitter-stream
-
---Bring up VM show the analytics app
-cd spring-xd-samples/analytics-dashboard/
---start webserver
-./startWebServer.sh (there is a tab in the windows group for this)
-
---Use firefox to browse to:
-http://localhost:9889/dashboard.html
-
-*** DEMO 4 MadLib - Linear Regression ****
+*** DEMO 3 MadLib - Linear Regression ****
 
 --view the data; predict house prices based on tax, bathroom and size
 select * from houses;
@@ -108,7 +96,7 @@ madlib.linregr_predict( ARRAY[1,tax,bath,size],
 ) as residual
 FROM houses, houses_linregr m;
 
-*** DEMO 5 - RMQ - GFXD - 2 Tables - DO NOT USE YET ****
+*** DEMO 4 - RMQ - GFXD - 2 Tables - DO NOT USE YET ****
 --Insert directly into GXD
 create table tweet (id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255), language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10), PRIMARY KEY (id)) PARTITION BY PRIMARY KEY BUCKETS 5 eviction by criteria (language_code <> 'en') evict incoming hdfsstore (tweet) ;
 create table hash_tag (id VARCHAR(255), tweet_id VARCHAR(255), text VARCHAR(255), language_code VARCHAR(10), PRIMARY KEY (id)) PARTITION BY COLUMN (tweet_id) colocate with (tweet) BUCKETS 5 eviction by criteria (language_code <> 'en') evict incoming hdfsstore (hash_tag) ;
