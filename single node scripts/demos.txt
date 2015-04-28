@@ -1,7 +1,7 @@
 *** DEMO 1 - Twitter Search - GemFire - HAWQ - SpringXD ***
 
 --pull data from twitter, see what is trending at twitter.com first
-stream create --name tweet --definition "twittersearch --query='GreysAnatomy' --outputType=application/json | transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
+stream create --name tweet --definition "twittersearch --query='HowIBecameAFan' --outputType=application/json | flatten: transform --script=tweets-search.groovy --inputType=application/json | csv: transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
 
 --set up analytic taps
 stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
@@ -9,18 +9,18 @@ stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --d
 stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
 
 --pull the most popular tweets into GemFire
-stream create gemfireTap --definition "tap:stream:tweet > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | transform --script=tweets-search.groovy --inputType=application/json  | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
+stream create gemfireTap --definition "tap:stream:tweet.flatten > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
 
 --examine all the data with HAWQ
 CREATE external TABLE tweet_pxf(
    id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255),
-   language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10))
+   language_code VARCHAR(10), retweet_count INTEGER)
    location ('pxf://pivhdsne:50070/tweet-data/tweet-*.txt?profile=HdfsTextSimple')
   FORMAT 'CSV' LOG ERRORS INTO tweet_err SEGMENT REJECT LIMIT 1000;
 
 select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user order by total desc limit 10 ;
 
-select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc;
+select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc, from_user desc;
 
 
 --
@@ -40,6 +40,7 @@ cd spring-xd-samples/analytics-dashboard/
 --Use firefox to browse to:
 http://localhost:9889/dashboard.html
 
+hdfs -dfs -ls /tweet-data
 
 
 *** DEMO 2 - Map Reduce vs HAWQ***
