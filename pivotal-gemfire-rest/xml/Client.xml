@@ -4,7 +4,7 @@
     "http://www.gemstone.com/dtd/cache6_5.dtd">
     
 <!--
-  | CqClient.xml
+  | Client.xml
   |
   | Configures a region as a client region in a cache. The region's 
   | pool connects to a server listening on port 40404.
@@ -14,5 +14,4 @@
 		<locator host="pivhdsne" port="10334" />
 	</pool>
 
-	<region name="tweet" refid="CACHING_PROXY"/>
 </client-cache>

@@ -37,7 +37,7 @@ public void run() throws Exception {
     // Create the cache which causes the cache-xml-file to be parsed
     ClientCache cache = new ClientCacheFactory()
         .set("name", "CqClient")
-        .set("cache-xml-file", "xml/CqClient.xml")
+        .set("cache-xml-file", "xml/Client.xml")
         .create();
 
 
