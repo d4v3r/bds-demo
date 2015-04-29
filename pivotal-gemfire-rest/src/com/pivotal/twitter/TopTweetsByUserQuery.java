@@ -18,11 +18,11 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.ScreenCharacterStyle;
 import com.googlecode.lanterna.terminal.Terminal;
 
-public class TopTweetsCQ {
+public class TopTweetsByUserQuery {
 
 
   public static void main(String[] args) throws Exception {
-    new TopTweetsCQ().run();
+    new TopTweetsByUserQuery().run();
   }
 
   @SuppressWarnings("static-access")
