@@ -85,6 +85,7 @@ SELECT madlib.linregr_train( 'houses',
 --examine the results
 \x ON
 SELECT * FROM houses_linregr;
+\x OFF
 
 --Predict the price
 SELECT houses.*,
