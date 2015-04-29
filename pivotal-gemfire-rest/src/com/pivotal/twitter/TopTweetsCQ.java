@@ -18,20 +18,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.ScreenCharacterStyle;
 import com.googlecode.lanterna.terminal.Terminal;
 
-/**
- * In this example of hierarchical caching, the server listens on a port for
- * client requests and updates. The client creates and executes CQ on the server
- * and waits for the events. Please refer to the quickstart guide for
- * instructions on how to run this example.
- * </p>
- * 
- * @author GemStone Systems, Inc.
- * @since 5.1
- */
 public class TopTweetsCQ {
-
-  public static final String EXAMPLE_REGION_NAME = "tweet";
-
 
 
   public static void main(String[] args) throws Exception {
@@ -46,6 +33,7 @@ public void run() throws Exception {
 	Screen screen = new Screen(terminal);
 	screen.startScreen();
     System.out.println("Connecting to the distributed system and creating the cache...");
+
     // Create the cache which causes the cache-xml-file to be parsed
     ClientCache cache = new ClientCacheFactory()
         .set("name", "CqClient")
