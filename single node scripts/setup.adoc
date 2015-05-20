@@ -80,15 +80,17 @@ Follow these directions for passwordless SSH.  Don't forget the IdentityFile lin
 http://drewsymo.com/2013/11/how-to-create-an-ssh-config-file-shortcut-on-mac-osx-linux/
 
 
-== 7 - Start Terminal Group
+== 7 - Start Terminal Group and Services
 Start the Terminal Windows Group.  You should ssh right into the VM.
 
-Start most services at (PHD, GF, HAWQ):
+Note that these are steps you will repeat each time you demo.
+
+Using the _admin_ tab in your terminal group start most services at (PHD, GF, HAWQ):
 ----
 ~/Desktop/start_all.sh
 ----
 
-To stop
+When done use the following to stop
 ----
 ~/Desktop/stop_all.sh
 ----
@@ -102,3 +104,17 @@ Start Spring Shell (separate tab)
 ----
 ~/spring-xd-1.0.2.RELEASE/shell/bin/xd-shell
 ----
+
+Startup the analytic dashboard web application
+
+Use the _Web Server_ tab in your terminal group to do this:
+[source,bash]
+----
+$ cd spring-xd-samples/analytics-dashboard/
+----
+Then start webserver
+[source,bash]
+----
+./startWebServer.sh
+----
+You now have an application listening at: http://pivhdsne:9889/dashboard.html

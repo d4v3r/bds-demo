@@ -3,13 +3,15 @@
 The goal of this demo is to show components of the BDS integrating together.  Namely PHD, HAWQ, Spring XD and GemFire.
 
 
-=== Step 1: Pull data from twitter.  See what is trending at twitter.com first and plug that in as the query parameter.
+=== Step 1: Pull data from twitter
+
+See what is trending at twitter.com first and plug that in as the query parameter.
 
 ----
 $ stream create --name tweet --definition "twittersearch --query='HowIBecameAFan' --outputType=application/json | flatten: transform --script=tweets-search.groovy --inputType=application/json | csv: transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
 ----
 
-=== Step 2: Set up analytic taps.
+=== Step 2: Set up analytic taps
 ----
 $ stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
 $ stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
@@ -21,7 +23,7 @@ $ stream create hashtags --definition "tap:stream:tweet > field-value-counter --
 stream create gemfireTap --definition "tap:stream:tweet.flatten > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
 ----
 
-=== Step 4: Setup the analytic dashboard web application.
+=== Step 4: Setup the analytic dashboard web application
 
 Use the _Web Server_ tab in your terminal group to do this:
 [source,bash]
@@ -54,7 +56,7 @@ $ stream deploy tweet
 ----
 
 
-=== Step 8: Examine all the data with HAWQ.
+=== Step 8: Examine all the data with HAWQ
 
 [source,sql]
 ----
@@ -66,6 +68,7 @@ CREATE external TABLE tweet_pxf(
 ----
 
 Different queries can be run to show ANSI SQL compliance.
+[source,sql]
 ----
 select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user order by total desc limit 10 ;
 

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>pivotal-gemfire-rest</groupId>
-  <artifactId>pivotal-gemfire-rest</artifactId>
+  <groupId>TopTweetsByUserQuery</groupId>
+  <artifactId>TopTweetsByUserQuery</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
     <antlr.version>2.7.7</antlr.version>
