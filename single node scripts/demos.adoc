@@ -1,23 +1,62 @@
-== DEMO 1 - Twitter Search - GemFire - HAWQ - SpringXD
+== DEMO 1 - BDS Integration Demo
 
-Pull data from twitter, see what is trending at twitter.com first.
+The goal of this demo is to show components of the BDS integrating together.  Namely PHD, HAWQ, Spring XD and GemFire.
+
+
+=== Step 1: Pull data from twitter.  See what is trending at twitter.com first and plug that in as the query parameter.
 
 ----
-stream create --name tweet --definition "twittersearch --query='HowIBecameAFan' --outputType=application/json | flatten: transform --script=tweets-search.groovy --inputType=application/json | csv: transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
+$ stream create --name tweet --definition "twittersearch --query='HowIBecameAFan' --outputType=application/json | flatten: transform --script=tweets-search.groovy --inputType=application/json | csv: transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
 ----
 
-Set up analytic taps.
+=== Step 2: Set up analytic taps.
 ----
-stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
-stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
-stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
+$ stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
+$ stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
+$ stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
 ----
 
-Pull the most popular tweets into GemFire
+=== Step 3: Pull the most popular tweets into GemFire
 ----
 stream create gemfireTap --definition "tap:stream:tweet.flatten > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
 ----
-Examine all the data with HAWQ.
+
+=== Step 4: Setup the analytic dashboard web application.
+
+Use the _Web Server_ tab in your terminal group to do this:
+[source,bash]
+----
+$ cd spring-xd-samples/analytics-dashboard/
+----
+Then start webserver
+[source,bash]
+----
+./startWebServer.sh
+----
+You now have an application listening at: http://pivhdsne:9889/dashboard.html
+
+=== Step 5: Start the GemFire Application from STS
+
+
+=== Step 6: Deploy tweet stream
+----
+hdfs -dfs -ls /tweet-data
+----
+
+=== Step 7: Deploy tweet stream
+
+Once the tweet stream is deployed then then the data pipeline will become active.
+
+Data will be landing in GemFire, HDFS and dash boards will start to populate.
+[source,bash]
+----
+$ stream deploy tweet
+----
+
+
+=== Step 8: Examine all the data with HAWQ.
+
+[source,sql]
 ----
 CREATE external TABLE tweet_pxf(
    id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255),
@@ -33,29 +72,17 @@ select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user
 select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc, from_user desc;
 ----
 
+=== Step 9: Examine all the data with HAWQ.
 
 GemFire Restful API
 ----
-curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=100
+curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=1
 ----
 
 
-----
-cd spring-xd-samples/analytics-dashboard/
-----
-Start webserver
-----
-./startWebServer.sh (there is a tab in the windows group for this)
-----
 
-Browse to:
-http://pivhdsne:9889/dashboard.html
 
-----
-hdfs -dfs -ls /tweet-data
-----
-
-*** DEMO 2 - Map Reduce vs HAWQ***
+== DEMO 2 - Map Reduce vs HAWQ
 This demo shows solving the same problem different ways.  The customer will see a spectrum of possibilities, but if speed is most important it is clear HAWQ is the best.
 
 Find top tax paid by postal code.
@@ -82,24 +109,36 @@ select billing_address_postal_code, sum(total_paid_amount::float8) as total, sum
 
 
 
-*** DEMO 3 MadLib - Linear Regression ****
+=== DEMO 3 MadLib - Linear Regression
 
---view the data; predict house prices based on tax, bathroom and size
+View the data; predict house prices based on tax, bathroom and size
+[source,sql]
+----
 select * from houses;
+----
 
---train the regression model
+Train the regression model
+
+[source,sql]
+----
 SELECT madlib.linregr_train( 'houses',
   'houses_linregr',
   'price',
   'ARRAY[1, tax, bath, size]'
 );
+----
+Examine the results
 
---examine the results
+[source,sql]
+----
 \x ON
 SELECT * FROM houses_linregr;
 \x OFF
+----
 
---Predict the price
+Predict the price
+[source,sql]
+----
 SELECT houses.*,
 madlib.linregr_predict( ARRAY[1,tax,bath,size],
   m.coef
@@ -109,34 +148,4 @@ madlib.linregr_predict( ARRAY[1,tax,bath,size],
   m.coef
 ) as residual
 FROM houses, houses_linregr m;
-
-*** DEMO 4 - RMQ - GFXD - 2 Tables - DO NOT USE YET ****
---Insert directly into GXD
-create table tweet (id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255), language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10), PRIMARY KEY (id)) PARTITION BY PRIMARY KEY BUCKETS 5 eviction by criteria (language_code <> 'en') evict incoming hdfsstore (tweet) ;
-create table hash_tag (id VARCHAR(255), tweet_id VARCHAR(255), text VARCHAR(255), language_code VARCHAR(10), PRIMARY KEY (id)) PARTITION BY COLUMN (tweet_id) colocate with (tweet) BUCKETS 5 eviction by criteria (language_code <> 'en') evict incoming hdfsstore (hash_tag) ;
-
---Spring XD Definitions
-stream create --name twitterfeed --definition "twitterstream --filterLevel=medium | rabbit --exchange=twitter.fanout"
-stream create --name tweet --definition "rabbit --queues=tweet --outputType=text/plain | transform --script=tweets-stream-delim.groovy --inputType=application/json | jdbc --columns='id, from_user, created_at, text, language_code, retweet_count, retweet'" --deploy
-stream create --name hash_tag --definition "rabbit --queues=hash.tag --outputType=text/plain | transform --script=tweets-hash.groovy --inputType=application/json | splitter --expression=#jsonPath(payload,'$.hashtags.hashtag[*]') --inputType=application/json | jdbc --tableName=hash_tag --columns='id, tweet_id, text, language_code' --inputType=application/json " --deploy
-
---find most hashtags
-select t.id, count(ht.tweet_id) as hash_tags  from  tweet as t left outer join  hash_tag ht on t.id = ht.tweet_id group by t.id order by count(ht.tweet_id) desc ;
-
-
---HAWQ Definitions
-CREATE external TABLE tweet_pxf(
-   id VARCHAR(255), from_user VARCHAR(255), created_at VARCHAR(255), text VARCHAR(255),
-   language_code VARCHAR(10), retweet_count INTEGER, retweet VARCHAR(10))
-   location ('pxf://pivhdsne:50070/tweet/APP.TWEET?PROFILE=GemFireXD&CHECKPOINT=false')
-  FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
-
-CREATE external TABLE hash_tag_pxf(
-   id VARCHAR(255), tweet_id VARCHAR(255), text VARCHAR(255),
-   language_code VARCHAR(10))
-   location ('pxf://pivhdsne:50070/hash_tag/APP.HASH_TAG?PROFILE=GemFireXD&CHECKPOINT=false')
-  FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
-
-select t.id, count(ht.tweet_id) as hash_tags  from  tweet_pxf as t left outer join  hash_tag_pxf ht on t.id = ht.tweet_id group by t.id order by count(ht.tweet_id) desc ;
-
-select t.id, count(ht.tweet_id) as hash_tags  from  tweet_pxf as t left outer join  hash_tag_pxf ht on t.id = ht.tweet_id group by t.id order by count(ht.tweet_id) desc ;
+----
