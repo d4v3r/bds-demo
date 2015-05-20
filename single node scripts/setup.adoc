@@ -58,7 +58,17 @@ You will then populate these values in the following files in the pivhdsne vm:
 ~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twittersearch/twittersearch.properties
 ~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twitterstream/twitterstream.properties
 ----
-== 6 - Import Terminal Group
+
+== 6 - Import TopTweetsByUserQuery
+
+TopTweetsByUserQuery is a GemFire client application.
+
+. Install link:https://spring.io/tools/sts/all[STS]
+. Clone this project if you haven't
+. Import Maven Project
+. Browse to TopTweetsByUserQuery directory
+
+== 7 - Import Terminal Group
 
 You will need a lot of terminal windows to make the demos seamless.  To make managing them easier we will use Terminal Windows groups.
 
@@ -80,32 +90,47 @@ Follow these directions for passwordless SSH.  Don't forget the IdentityFile lin
 http://drewsymo.com/2013/11/how-to-create-an-ssh-config-file-shortcut-on-mac-osx-linux/
 
 
-== 7 - Start Terminal Group and Services
+== 8 - Start Terminal Group and Services
 Start the Terminal Windows Group.  You should ssh right into the VM.
 
 Note that these are steps you will repeat each time you demo.
 
+=== Start PHD, HAWQ, and GemFire
+
 Using the _admin_ tab in your terminal group start most services at (PHD, GF, HAWQ):
+[source,bash]
 ----
-~/Desktop/start_all.sh
+$ ~/Desktop/start_all.sh
 ----
 
 When done use the following to stop
+[source,bash]
 ----
-~/Desktop/stop_all.sh
-----
-
-Start Spring XD
-----
-~/spring-xd-1.0.2.RELEASE/xd/bin/xd-singlenode
+$ ~/Desktop/stop_all.sh
 ----
 
-Start Spring Shell (separate tab)
+=== Start Spring XD
+Use the _Spring XD Single Node_ tab in your terminal group.
+[source,bash]
 ----
-~/spring-xd-1.0.2.RELEASE/shell/bin/xd-shell
+$ ~/spring-xd-1.0.2.RELEASE/xd/bin/xd-singlenode
+----
+Control + C will kill this process
+
+=== Start Spring Shell (separate tab)
+[source,bash]
+----
+$ ~/spring-xd-1.0.2.RELEASE/shell/bin/xd-shell
 ----
 
-Startup the analytic dashboard web application
+To exit shell
+[source,bash]
+----
+$ exit
+----
+
+
+=== Startup the analytic dashboard web application
 
 Use the _Web Server_ tab in your terminal group to do this:
 [source,bash]
