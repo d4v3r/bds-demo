@@ -2,16 +2,19 @@
 = DEMO ENVIRONMENT
 
 * PHD 2.1 with GemFire and HAWQ
-* Spring XD version 1.0.0.M6
+* Spring XD version 1.0.2
 * 8GB of Memory and 4 cores configured for the VM
 
 
 
 = SETUP
 
+== Confirm VM Configuration Settings:
+Make certain that you have 8GB of Memory and 4 cores configured for the VM
+
 == Assign VM a Static IP Address:
 
-Generally speaking, I find it advantageous to demo outside of the VM.  For that reason, you will need to assign your PHD VM a static IP address.
+Generally speaking, it is advantageous to demo outside of the VM.  For that reason, you will need to assign your PHD VM a static IP address.
 
 Please follow these directions:
 http://socalledgeek.com/blog/2012/8/23/fixed-dhcp-ip-allocation-in-vmware-fusion
@@ -20,18 +23,20 @@ Note that your subnet may be different from the one mentioned in the article.  F
 
 Also make sure that the IP address that you assign is outside of the range used by fusion.  You can find the range used close to the top of the file.
 
+In most cases, restarting Fusion is enough, but if you don't get an IPv4 IP address then also reboot your machine.
+
 == Edit VM Hosts File:
 
 Edit the hosts file on the VM and make certain that the following host names resolve to your new static IP address:
+----
 172.16.111.53   pivhdsne pivhdsne.localdomain
-
+----
 == Edit Local Hosts File:
 
 Edit the hosts file on your host and make certain that the following host names resolve to your new static IP address:
+----
 172.16.111.53   pivhdsne pivhdsne.localdomain
-
-== Confirm VM Configuration Settings:
-Make certain that you have 8GB of Memory and 4 cores configured for the VM
+----
 
 == Setup Twitter Keys:
 
@@ -42,15 +47,16 @@ https://apps.twitter.com/
 
 You will need the following:
 
-consumerKey
-consumerSecret
-accessToken
-accessTokenSecret
+* consumerKey
+* consumerSecret
+* accessToken
+* accessTokenSecret
 
 You will then populate these values in the following files in the pivhdsne vm:
+----
 ~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twittersearch/twittersearch.properties
 ~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twitterstream/twitterstream.properties
-
+----
 == Import Terminal Group:
 
 You will need a lot of terminal windows to make the demos seamless.  To make managing them easier we will use Terminal Windows groups.
@@ -59,28 +65,39 @@ Import the Windows group into Terminal - this is the pivhdsne.terminal file.
 
 Mac:
 Create host-specific key and store in standard location
+----
 $ ssh-keygen -t rsa -f ~/.ssh/gpadmin_pivhdsne
-
+----
 
 Mac:
 Copy key to remote host (no ssh-copy-id on macs)
+----
 $ cat ~/.ssh/gpadmin_pivhdsne.pub | ssh gpadmin@pivhdsne 'cat >> ~/.ssh/authorized_keys'
+----
 
-Follow these directions for passwordles SSH.  Don't forget the IdentityFile line.  Mine is: ~/.ssh/gpadmin_pivhdsne
+Follow these directions for passwordless SSH.  Don't forget the IdentityFile line.  Mine is: ~/.ssh/gpadmin_pivhdsne
 http://drewsymo.com/2013/11/how-to-create-an-ssh-config-file-shortcut-on-mac-osx-linux/
 
 
 == Start Terminal Group:
 Start the Terminal Windows Group.  You should ssh right into the VM.
 
-Start most services at (PHD, GXD, HAWQ):
-Desktop/start_all.sh
+Start most services at (PHD, GF, HAWQ):
+----
+~/Desktop/start_all.sh
+----
 
 to stop
-Desktop/stop_all.sh
+----
+~/Desktop/stop_all.sh
+----
 
 Start Spring XD:
+----
 ~/spring-xd-1.0.2.RELEASE/xd/bin/xd-singlenode
+----
 
 Start Spring Shell (separate tab)
+----
 ~/spring-xd-1.0.2.RELEASE/shell/bin/xd-shell
+----
