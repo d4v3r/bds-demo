@@ -10,7 +10,7 @@
 = SETUP
 Follow the following steps to create a portable demo envionment on your laptop:
 
-== . Confirm VM Configuration Settings:
+.== Confirm VM Configuration Settings:
 Make certain that you have 8GB of Memory and 4 cores configured for the VM
 
 == Assign VM a Static IP Address
