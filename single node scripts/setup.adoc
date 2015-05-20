@@ -10,10 +10,10 @@
 = SETUP
 Follow the following steps to create a portable demo envionment on your laptop:
 
-.== Confirm VM Configuration Settings:
+== 1 - Confirm VM Configuration Settings
 Make certain that you have 8GB of Memory and 4 cores configured for the VM
 
-== Assign VM a Static IP Address
+== 2 - Assign VM a Static IP Address
 
 Generally speaking, it is advantageous to demo outside of the VM.  For that reason, you will need to assign your PHD VM a static IP address.
 
@@ -26,20 +26,20 @@ Also make sure that the IP address that you assign is outside of the range used 
 
 In most cases, restarting Fusion is enough, but if you don't get an IPv4 IP address then also reboot your machine.
 
-== Edit VM Hosts File
+== 3 - Edit VM Hosts File
 
 Edit the hosts file on the VM and make certain that the following host names resolve to your new static IP address:
 ----
 172.16.111.53   pivhdsne pivhdsne.localdomain
 ----
-== Edit Local Hosts File
+== 4 - Edit Local Hosts File
 
 Edit the hosts file on your host and make certain that the following host names resolve to your new static IP address:
 ----
 172.16.111.53   pivhdsne pivhdsne.localdomain
 ----
 
-== Setup Twitter Keys
+== 5 - Setup Twitter Keys
 
 Most of the demonstrations use twitter apis to ingest data.
 
@@ -58,7 +58,7 @@ You will then populate these values in the following files in the pivhdsne vm:
 ~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twittersearch/twittersearch.properties
 ~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twitterstream/twitterstream.properties
 ----
-== Import Terminal Group
+== 6 - Import Terminal Group
 
 You will need a lot of terminal windows to make the demos seamless.  To make managing them easier we will use Terminal Windows groups.
 
@@ -80,7 +80,7 @@ Follow these directions for passwordless SSH.  Don't forget the IdentityFile lin
 http://drewsymo.com/2013/11/how-to-create-an-ssh-config-file-shortcut-on-mac-osx-linux/
 
 
-== Start Terminal Group
+== 7 - Start Terminal Group
 Start the Terminal Windows Group.  You should ssh right into the VM.
 
 Start most services at (PHD, GF, HAWQ):
