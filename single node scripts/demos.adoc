@@ -34,7 +34,7 @@ $ cd spring-xd-samples/analytics-dashboard/
 Then start webserver
 [source,bash]
 ----
-./startWebServer.sh
+$ ./startWebServer.sh
 ----
 You now have an application listening at: http://pivhdsne:9889/dashboard.html
 
@@ -65,7 +65,7 @@ Should show no data in terminal window:
 image:images/toptweetsbyuserquery-empty.png[app]
 
 Review Spring XD Analytic Dashboard (should be empty):
-
+image:images/empty-browser.png[app-empty]
 
 === Step 7: Deploy tweet stream
 
@@ -90,15 +90,17 @@ Note that there are counts for:
 * aggregate # of tweets
 * languages
 * hash tags
+
+image:images/full-browser.png[app-empty]
 ----
 http://pivhdsne:9889/dashboard.html
 ----
 
 Review the TopTweetsByUserQuery application.
 
-IT should be populating with data.
+It should be populating with data.
 
-
+image:images/toptweetsbyuserquery-full.png[app]
 
 Demo the GemFire Restful API.  Great for transactional applications and is language agnostic.
 ----
@@ -217,3 +219,9 @@ madlib.linregr_predict( ARRAY[1,tax,bath,size],
 ) as residual
 FROM houses, houses_linregr m;
 ----
+
+=== DEMO 4 - Integration with 3rd Party tool (Tableau)
+
+Visualize data with Tableau:
+
+image:images/tableau.png[tableau]

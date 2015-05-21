@@ -142,4 +142,7 @@ Then start webserver
 ----
 ./startWebServer.sh
 ----
-You now have an application listening at: http://pivhdsne:9889/dashboard.html
+You now have an Ruby web server listening at:
+http://pivhdsne:9889/dashboard.html
+
+Control + C will kill this process
