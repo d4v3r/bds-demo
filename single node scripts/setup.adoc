@@ -156,6 +156,7 @@ Control + C will kill this process
 . Install the link:http://www.tableau.com/support/drivers#mac-greenplum[Pivotal Greenplum Driver for Tableau]
 . Get the license key from Dave
 . Open the link:hawq_demo.twb[HAWQ Demo Workbook] in Tableau
+. Get familiar with the following screens
 
 Dataset Configuration:
 image:images/data-set-configuration.png[dataset]
