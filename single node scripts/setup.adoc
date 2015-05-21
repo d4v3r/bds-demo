@@ -68,23 +68,6 @@ TopTweetsByUserQuery is a GemFire client application.
 . Import Maven Project
 . Browse to TopTweetsByUserQuery directory
 
-== 7 - Install Tableau
-
-. Install link:https://www.tableau.com/products/desktop/download[Tableau Desktop]
-. Get the license key from Dave
-. Create a new workbook: hawq_demo
-. Create inital views from the retail demo dataset already loaded on the pivhdsne VM.
-
-Dataset Configuration:
-image:images/data-set-configuration.png[dataset]
-
-
-Order Items by Category:
-image:images/tab-sheet1.png[sheet1]
-
-
-Average Total Discount by Category and State
-image:images/tab-sheet2.png[sheet2]
 
 == 8 - Import Terminal Group
 
@@ -165,3 +148,22 @@ You now have an Ruby web server listening at:
 http://pivhdsne:9889/dashboard.html
 
 Control + C will kill this process
+
+
+== 10 - Install Tableau Locally
+
+. Install link:https://www.tableau.com/products/desktop/download[Tableau Desktop]
+. Get the license key from Dave
+. Create a new workbook: hawq_demo
+. Create inital views from the retail demo dataset already loaded on the pivhdsne VM.
+
+Dataset Configuration:
+image:images/data-set-configuration.png[dataset]
+
+
+Order Items by Category:
+image:images/tab-sheet1.png[sheet1]
+
+
+Average Total Discount by Category and State
+image:images/tab-sheet2.png[sheet2]
