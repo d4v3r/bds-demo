@@ -62,6 +62,7 @@ $ hdfs -dfs -ls /tweet-data
 Review the TopTweetsByUserQuery application.
 
 Should show no data in terminal window:
+image:images/toptweetsbyuserquery-empty.png[app]
 
 Review Spring XD Analytic Dashboard (should be empty):
 
@@ -117,7 +118,7 @@ CREATE external TABLE tweet_pxf(
   FORMAT 'CSV' LOG ERRORS INTO tweet_err SEGMENT REJECT LIMIT 1000;
 ----
 
-Different queries can be run to show ANSI SQL compliance.
+Different queries can be run to show ANSI SQL compliance:
 [source,sql]
 ----
 select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user order by total desc limit 10 ;
@@ -131,7 +132,7 @@ select distinct from_user, retweet_count from tweet_pxf order by retweet_count d
 
 
 == DEMO 2 - Performance Spectrum: Map Reduce vs HAWQ
-This demo shows solving the analytic problem different ways.  The goals is to find top tax paid by postal code.  The customer will see a spectrum of possibilities, but if speed is most important it is clear HAWQ is the best.
+This demo shows solving the analytic problem different ways.  The goal is to find top tax paid by postal code.  The customer will see a spectrum of possibilities, but if speed is most important it is clear HAWQ is the best.
 
 
 

@@ -28,7 +28,7 @@ public class TopTweetsByUserQuery {
   @SuppressWarnings("static-access")
 public void run() throws Exception {
 	Terminal terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF8"));
-	terminal.enterPrivateMode();
+	//terminal.enterPrivateMode();
 	
 	Screen screen = new Screen(terminal);
 	screen.startScreen();
