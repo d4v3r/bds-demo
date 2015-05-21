@@ -153,9 +153,9 @@ Control + C will kill this process
 == 10 - Install Tableau Locally
 
 . Install link:https://www.tableau.com/products/desktop/download[Tableau Desktop]
+. Install the link:http://www.tableau.com/support/drivers#mac-greenplum[Pivotal Greenplum Driver for Tableau]
 . Get the license key from Dave
-. Create a new workbook: hawq_demo
-. Create inital views from the retail demo dataset already loaded on the pivhdsne VM.
+. Open the link:hawq_demo.twb[HAWQ Demo Workbook]
 
 Dataset Configuration:
 image:images/data-set-configuration.png[dataset]
@@ -165,5 +165,5 @@ Order Items by Category:
 image:images/tab-sheet1.png[sheet1]
 
 
-Average Total Discount by Category and State
+Average Total Discount by Category and State:
 image:images/tab-sheet2.png[sheet2]
