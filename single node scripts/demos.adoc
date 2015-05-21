@@ -148,7 +148,7 @@ $ hdfs dfs -cat /retail_demo/orders/orders.tsv.gz | zcat | wc -l
 $ hdfs dfs -ls /retail_demo/orders/orders.tsv.gz
 ----
 
-Time M/R job:
+Time M/R job (take note of how long it takes):
 [source,bash]
 ----
 $ time hadoop jar target/taxpaid_by_postalcode-1.0.jar com.pivotal.hadoop.PostalCodesPaidAmountTaxDriver /retail_demo/orders/orders.tsv.gz /output-mr1
@@ -161,6 +161,7 @@ $ hdfs dfs -cat /output-mr1/part-r-00000
 Now move to the _HAWQ_ tab of your terminal group.  Start the psql client:
 ----
 $ psql
+$ \timing
 ----
 
 Solve the same problem with HAWQ external tables:
