@@ -2,6 +2,7 @@
 
 The goal of this demo is to show components of the BDS integrating together.  Namely PHD, HAWQ, Spring XD and GemFire.
 
+image:images/integration.png[Integration]
 
 === Step 1: Pull data from twitter
 
@@ -37,20 +38,33 @@ Then start webserver
 ----
 You now have an application listening at: http://pivhdsne:9889/dashboard.html
 
-=== Step 5: Start the GemFire Application from STS
+=== Step 5: Start the TopTweetsByUserQuery GemFire Application from STS
 
 This application will connect to GemFire grid running in your pivhdsne VM.
+
+This application uses OQL to find the most popular tweets.
+
 In STS run the class:
 
 [source,java]
-____
+----
 com.pivotal.twitter.TopTweetsByUserQuery
-____
+----
 
-=== Step 6: Deploy tweet stream
+
+=== Step 6: Review environment before activating pipeline
+
+Review HDFS (should be empty):
 ----
 $ hdfs -dfs -ls /tweet-data
 ----
+
+Review the TopTweetsByUserQuery application.
+
+Should show no data in terminal window:
+
+Review Spring XD Analytic Dashboard (should be empty):
+
 
 === Step 7: Deploy tweet stream
 
@@ -63,8 +77,37 @@ $ stream deploy tweet
 ----
 
 
-=== Step 8: Examine all the data with HAWQ
+=== Step 8: Show the effects of the data pipeline
 
+Review HDFS (should be filling up with files):
+----
+$ hdfs -dfs -ls /tweet-data
+----
+
+Review the Spring XD analytic dashboard in your local browser:
+Note that there are counts for:
+* aggregate # of tweets
+* languages
+* hash tags
+----
+http://pivhdsne:9889/dashboard.html
+----
+
+Review the TopTweetsByUserQuery application.
+
+IT should be populating with data.
+
+
+
+Demo the GemFire Restful API.  Great for transactional applications and is language agnostic.
+----
+$ curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=1
+----
+
+
+Examine all the data with HAWQ:
+
+This table should already be created for you..
 [source,sql]
 ----
 CREATE external TABLE tweet_pxf(
@@ -82,12 +125,7 @@ select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user
 select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc, from_user desc;
 ----
 
-=== Step 9: Examine all the data with HAWQ.
 
-GemFire Restful API
-----
-$ curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=1
-----
 
 
 
