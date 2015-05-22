@@ -61,6 +61,7 @@ public void run() throws Exception {
 
   
   private String formatQueryResult(Object result, Screen screen) {
+	  	screen.clear();
 	    if (result == null) {
 	      return "null";
 	    }
