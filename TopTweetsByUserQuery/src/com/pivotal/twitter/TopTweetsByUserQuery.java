@@ -85,7 +85,7 @@ public void run() throws Exception {
 	    	  Struct es = (Struct)e;
 	    	  String from_user = (String)es.get("from_user");
 	    	  int retweet_count = (Integer)es.get("retweet_count");
-	    	  retweet_count = retweet_count - 50000;
+	    	  retweet_count = retweet_count;
 	    	  Set<ScreenCharacterStyle> hs2 = new HashSet<ScreenCharacterStyle>();
 	    	  screen.putString(6, y, from_user , Terminal.Color.WHITE, Terminal.Color.BLACK,hs2);
 	    	  screen.putString(41, y, Integer.toString(retweet_count), Terminal.Color.WHITE, Terminal.Color.BLACK,hs2);

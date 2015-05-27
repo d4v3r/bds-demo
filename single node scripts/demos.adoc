@@ -11,19 +11,19 @@ See what is trending at twitter.com first and plug that in as the query paramete
 Define the streams through the Spring XD Shell
 
 ----
-$ stream create --name tweet --definition "twittersearch --query='HowIBecameAFan' --outputType=application/json | flatten: transform --script=tweets-search.groovy --inputType=application/json | csv: transform --script=csv.groovy --inputType=application/json | hdfs --rollover=1K --directory=/tweet-data"
+stream create --name tweet --definition "twittersearch --query='HowIBecameAFan' | flatten: transform --script=tweets-search.groovy | csv: transform --script=csv.groovy | hdfs --rollover=1K --directory=/tweet-data"
 ----
 
 === Step 2: Set up analytic taps
 ----
-$ stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
-$ stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
-$ stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
+stream create tweetlang  --definition "tap:stream:tweet > field-value-counter --fieldName=lang" --deploy
+stream create tweetcount --definition "tap:stream:tweet > aggregate-counter" --deploy
+stream create hashtags --definition "tap:stream:tweet > field-value-counter --fieldName=entities.hashtags.text --name=hashtags" --deploy
 ----
 
 === Step 3: Pull the most popular tweets into GemFire
 ----
-stream create gemfireTap --definition "tap:stream:tweet.flatten > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | gemfire-json-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getField('id')" --deploy
+stream create gemfireTap --definition "tap:stream:tweet.flatten > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | transform --script=tweet-transformer.groovy  | gemfire-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getId()" --deploy
 ----
 
 === Step 4: Setup the analytic dashboard web application
@@ -103,11 +103,6 @@ Review the TopTweetsByUserQuery application.
 It should be populating with data.
 
 image:images/toptweetsbyuserquery-full.png[app]
-
-Demo the GemFire Restful API.  Great for transactional applications and is language agnostic.
-----
-$ curl -i http://pivhdsne:7576/gemfire-api/v1/tweet?limit=1
-----
 
 
 Examine all the data with HAWQ:
