@@ -55,8 +55,7 @@ You will need the following
 
 You will then populate these values in the following files in the pivhdsne vm:
 ----
-~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twittersearch/twittersearch.properties
-~/spring-xd-1.0.2.RELEASE/xd/config/modules/source/twitterstream/twitterstream.properties
+~/spring-xd-1.0.2.RELEASE/xd/config/modules/modules.yml
 ----
 
 == 6 - Import TopTweetsByUserQuery Project into STS
