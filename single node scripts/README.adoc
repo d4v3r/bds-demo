@@ -1,1 +1,0 @@
-Describes link:setup.adoc[setup] and link:demos.adoc[demos] that can be run with a the single node VM.
