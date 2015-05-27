@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE client-cache PUBLIC
+    "-//GemStone Systems, Inc.//GemFire Declarative Caching 6.5//EN"
+    "http://www.gemstone.com/dtd/cache6_5.dtd">
+    
+<!--
+  | Client.xml
+  |
+  | Configures a region as a client region in a cache. The region's 
+  | pool connects to a server listening on port 40404.
+ -->
+<client-cache>
+	<pool name="client" subscription-enabled="true">
+		<locator host="pivhdsne" port="10334" />
+	</pool>
+
+</client-cache>
