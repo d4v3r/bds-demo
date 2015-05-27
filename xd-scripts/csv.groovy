@@ -12,7 +12,6 @@ def var_retweet = jsonPayload?.retweeted
 def hashTags = jsonPayload?.entities?.hashtags
 
 
-var_retweetCount = var_retweetCount - 50000         
 def csv = var_id + ',' + var_fromUser + ',' + var_createdAt + ',"' + var_text + '",' + var_languageCode + ',' + var_retweetCount
 
 return csv

@@ -15,14 +15,14 @@ def builder = new groovy.json.JsonBuilder()
 def var_rand_id = java.util.UUID.randomUUID().toString()
 	builder {
 	  id var_rand_id
-          from_user var_fromUser 
+          from_user var_fromUser
           created_at var_createdAt
           text var_text
           language_code var_languageCode
-          retweet_count var_retweetCount + 50000
+          retweet_count var_retweetCount
 	}
-	
-	
+
+
 
 
 return builder.toString()
