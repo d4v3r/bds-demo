@@ -1,3 +1,3 @@
 Describes link:setup.adoc[setup] and link:demos.adoc[demos] that can be run with a the single node VM.
 
-Clone this link:repo[https://github.com/d4v3r/bds-demo].
+Clone this link:https://github.com/d4v3r/bds-demo[repo].
