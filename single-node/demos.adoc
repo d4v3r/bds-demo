@@ -26,21 +26,8 @@ stream create hashtags --definition "tap:stream:tweet > field-value-counter --fi
 stream create gemfireTap --definition "tap:stream:tweet.flatten > filter --expression=!(T(java.lang.Integer).parseInt(#jsonPath(payload,'$.retweet_count'))<1) | transform --script=tweet-transformer.groovy  | gemfire-server --useLocator=true --host=pivhdsne --port=10334 --regionName=tweet --keyExpression=payload.getId()" --deploy
 ----
 
-=== Step 4: Setup the analytic dashboard web application
 
-Use the _Web Server_ tab in your terminal group to do this:
-[source,bash]
-----
-$ cd spring-xd-samples/analytics-dashboard/
-----
-Then start webserver
-[source,bash]
-----
-$ ./startWebServer.sh
-----
-You now have an application listening at: http://pivhdsne:9889/dashboard.html
-
-=== Step 5: Start the TopTweetsByUserQuery GemFire Application from STS
+=== Step 4: Start the TopTweetsByUserQuery GemFire Application from STS
 
 This application will connect to GemFire grid running in your pivhdsne VM.
 
@@ -54,11 +41,11 @@ com.pivotal.twitter.TopTweetsByUserQuery
 ----
 
 
-=== Step 6: Review environment before activating pipeline
+=== Step 5: Review environment before activating pipeline
 
 Review HDFS (should be empty):
 ----
-$ hdfs -dfs -ls /tweet-data
+$ hdfs dfs -ls /tweet-data
 ----
 
 Review the TopTweetsByUserQuery application.
@@ -69,7 +56,7 @@ image:images/toptweetsbyuserquery-empty.png[app]
 Review Spring XD Analytic Dashboard (should be empty):
 image:images/empty-browser.png[app-empty]
 
-=== Step 7: Deploy tweet stream
+=== Step 6: Deploy tweet stream
 
 Once the tweet stream is deployed then then the data pipeline will become active.
 
@@ -80,7 +67,7 @@ $ stream deploy tweet
 ----
 
 
-=== Step 8: Show the effects of the data pipeline
+=== Step 7: Show the effects of the data pipeline
 
 Review HDFS (should be filling up with files):
 ----
