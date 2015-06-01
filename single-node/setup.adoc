@@ -72,7 +72,7 @@ TopTweetsByUserQuery is a GemFire client application.
 
 You will need a lot of terminal windows to make the demos seamless.  To make managing them easier we will use Terminal Windows groups.
 
-Import the Windows group into Terminal - this is the pivhdsne.terminal file.
+Import the Windows group into Terminal - this is the link:pivhdsne.terminal[pivhdsne.terminal] file.
 
 Mac:
 Create host-specific key and store in standard location
@@ -148,6 +148,14 @@ http://pivhdsne:9889/dashboard.html
 
 Control + C will kill this process
 
+=== Setup M/R Example
+
+Do this in the _M/R Example_ tab of your terminal group:
+
+[source,bash]
+----
+$ cd  /pivotal-samples/map-reduce-java/taxpaid_by_postalcode
+----
 
 == 10 - Install Tableau Locally
 

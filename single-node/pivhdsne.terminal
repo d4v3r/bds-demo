@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WindowList</key>
+	<array>
+		<dict>
+			<key>Origin</key>
+			<string>{34, 867}</string>
+			<key>ScrollerStyle</key>
+			<integer>0</integer>
+			<key>ShowsTabBar</key>
+			<false/>
+			<key>ShowsTabBarInFullScreen</key>
+			<false/>
+			<key>Window Settings</key>
+			<array>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>120</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>19</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>FB7B483E-3EED-45F2-81FD-49FEB3C86640</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>Spring XD Single Node</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>120</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>19</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>7DDC646C-5708-4B88-8A13-F53CD2C633C1</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>Spring XD Shell</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>141</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>25</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>E1E93268-AABC-4C05-B565-6E2A78A54E25</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>GFSH</string>
+					<key>TabSelected</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>141</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>25</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>142AAD38-20EB-4DC0-8C1A-FFDC77B47C1A</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>HAWQ</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>141</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>25</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>30BCB109-407F-4CD2-B9B3-D7341BF6F22C</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>M/R Example</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>141</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>25</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>16EF2EBA-AADB-4F69-BA9C-6607AEDA8C5B</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>Web Server</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>141</integer>
+					<key>Tab Custom Command</key>
+					<string>ssh pivhdsne</string>
+					<key>Tab Custom Command Restorable</key>
+					<false/>
+					<key>Tab Custom Command Run As Shell</key>
+					<true/>
+					<key>Tab Row Count</key>
+					<integer>25</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Scrolling Pinned</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>04EB96CD-AD13-4143-8F5A-276451C41C66</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Title</key>
+					<string>admin</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+			</array>
+			<key>WindowNumber</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>Origin</key>
+			<string>{341, 595}</string>
+			<key>ScrollerStyle</key>
+			<integer>0</integer>
+			<key>ShowsTabBar</key>
+			<false/>
+			<key>ShowsTabBarInFullScreen</key>
+			<false/>
+			<key>Window Settings</key>
+			<array>
+				<dict>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>FF5A5CC4-8275-423D-9896-0561FB0DD7D7</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>BackgroundColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAwIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>CursorBlink</key>
+						<true/>
+						<key>CursorColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>Font</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGGBlYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKQHCBESVSRu
+						dWxs1AkKCwwNDg8QVk5TU2l6ZVhO
+						U2ZGbGFnc1ZOU05hbWVWJGNsYXNz
+						I0AzAAAAAAAAEBCAAoADWkFuZGFs
+						ZU1vbm/SExQVFlokY2xhc3NuYW1l
+						WCRjbGFzc2VzVk5TRm9udKIVF1hO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEaG1Ryb290gAEIERojLTI3
+						PEJLUltiaXJ0dniDiJOco6avwcTJ
+						AAAAAAAAAQEAAAAAAAAAHAAAAAAA
+						AAAAAAAAAAAAAMs=
+						</data>
+						<key>Linewrap</key>
+						<true/>
+						<key>ProfileCurrentVersion</key>
+						<real>2.04</real>
+						<key>TextBoldColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMCAxIDAA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>TextColor</key>
+						<data>
+						YnBsaXN0MDDUAQIDBAUGFRZYJHZl
+						cnNpb25YJG9iamVjdHNZJGFyY2hp
+						dmVyVCR0b3ASAAGGoKMHCA9VJG51
+						bGzTCQoLDA0OVU5TUkdCXE5TQ29s
+						b3JTcGFjZVYkY2xhc3NGMSAxIDEA
+						EAGAAtIQERITWiRjbGFzc25hbWVY
+						JGNsYXNzZXNXTlNDb2xvcqISFFhO
+						U09iamVjdF8QD05TS2V5ZWRBcmNo
+						aXZlctEXGFRyb290gAEIERojLTI3
+						O0FITltiaWttcn2GjpGarK+0AAAA
+						AAAAAQEAAAAAAAAAGQAAAAAAAAAA
+						AAAAAAAAALY=
+						</data>
+						<key>name</key>
+						<string>The New Black</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>The New Black</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://DROBERTS-MBPRO.local/Users/droberts/repo/bds-demo/</string>
+					<key>TabSelected</key>
+					<true/>
+				</dict>
+			</array>
+			<key>WindowNumber</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>name</key>
+	<string>pivhdsne</string>
+	<key>type</key>
+	<string>Window Group</string>
+</dict>
+</plist>

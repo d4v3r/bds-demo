@@ -71,7 +71,7 @@ $ stream deploy tweet
 
 Review HDFS (should be filling up with files):
 ----
-$ hdfs -dfs -ls /tweet-data
+$ hdfs dfs -ls /tweet-data
 ----
 
 Review the Spring XD analytic dashboard in your local browser:
@@ -107,25 +107,19 @@ CREATE external TABLE tweet_pxf(
 Different queries can be run to show ANSI SQL compliance:
 [source,sql]
 ----
+
+-- Top Tweets By User
+select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc, from_user desc limit 10;
+
+-- Most Retweeted Users - All Tweets
 select from_user, sum(retweet_count) as total  from tweet_pxf group by from_user order by total desc limit 10 ;
 
-select distinct from_user, retweet_count from tweet_pxf order by retweet_count desc, from_user desc;
+
 ----
-
-
-
-
 
 
 == DEMO 2 - Performance Spectrum: Map Reduce vs HAWQ
 This demo shows solving the analytic problem different ways.  The goal is to find top tax paid by postal code.  The customer will see a spectrum of possibilities, but if speed is most important it is clear HAWQ is the best.
-
-
-
-To run the M/R job, go to the following directory.  Do this in the _M/R Example_ tab of your terminal group:
-----
-$ cd  /pivotal-samples/map-reduce-java/taxpaid_by_postalcode
-----
 
 Show off attributes about the file:
 ----
