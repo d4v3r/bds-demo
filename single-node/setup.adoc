@@ -278,4 +278,41 @@ host     all         gpadmin         127.0.0.1/28    trust
 host     all         gpadmin         172.16.111.1/24        trust
 host     all         gpadmin         ::1/128       trust
 host     all         gpadmin         fe80::250:56ff:fea0:7001/128       trust
----
+----
+
+= Troubleshooting
+Things can go wrong...
+
+Start by consulting start and stop scripts for managing services.
+
+[source,bash]
+----
+$ Desktop/start_all.sh
+$ Desktop/stop_all.sh
+----
+
+== Hadoop/HDFS Doesn't Start
+
+Stop everything and restart Commander:
+
+[source,bash]
+----
+$ Desktop/stop_all.sh
+$ sudo service commander stop
+$ sudo service commander stop
+$ Desktop/start_all.sh
+----
+
+== HAWQ Doesn't Start
+[source,bash]
+----
+$ source /usr/local/hawq/greenplum_path.sh
+$ gpstart -a
+----
+
+== M/R Permission Error
+
+[source,bash]
+----
+sudo chmod a+rw /tmp/gphdtmp
+----
