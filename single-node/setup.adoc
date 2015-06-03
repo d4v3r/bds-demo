@@ -72,6 +72,8 @@ TopTweetsByUserQuery is a GemFire client application.
 
 You will need a lot of terminal windows to make the demos seamless.  To make managing them easier we will use Terminal Windows groups.
 
+The ssh password for gpadmin is: password
+
 Import the Windows group into Terminal - this is the link:pivhdsne.terminal[pivhdsne.terminal] file.
 
 Mac:
