@@ -88,7 +88,7 @@ Copy key to remote host (no ssh-copy-id on macs)
 $ cat ~/.ssh/gpadmin_pivhdsne.pub | ssh gpadmin@pivhdsne 'cat >> ~/.ssh/authorized_keys'
 ----
 
-Follow these directions for creating link:http://drewsymo.com/2013/11/how-to-create-an-ssh-config-file-shortcut-on-mac-osx-linux/passwordless[an SSH config file].  Here are other link:http://www.maclife.com/article/columns/terminal_101_easy_login_ssh_config_file[directions] due to broken link (hopefully temporary).
+Follow these directions for creating link:http://drewsymo.com/2013/11/how-to-create-an-ssh-config-file-shortcut-on-mac-osx-linux/passwordless[an SSH config file].  Here are other link:http://www.maclife.com/article/columns/terminal_101_easy_login_ssh_config_file[directions] due to the broken link (hopefully temporary).
 
 Example:
 [source,bash]
