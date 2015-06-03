@@ -102,7 +102,7 @@ Host pivhdsne
 
 
 
-== 9 - Start Terminal Group and Services (repeated each demo)
+== 9 - Start Terminal Group and Services (repeated for each demo)
 Start the Terminal Windows Group.  You should ssh right into the VM.
 
 *Note that these are steps you will repeat each time you demo.*
@@ -168,27 +168,8 @@ Do this in the _M/R Example_ tab of your terminal group:
 $ cd  /pivotal-samples/map-reduce-java/taxpaid_by_postalcode
 ----
 
-== 10 - Install Tableau Locally
 
-. Install link:https://www.tableau.com/products/desktop/download[Tableau Desktop]
-. Install the link:http://www.tableau.com/support/drivers#mac-greenplum[Pivotal Greenplum Driver for Tableau]
-. Get the license key from Dave
-. Open the link:hawq_demo.twb[HAWQ Demo Workbook] in Tableau
-. Get familiar with the following screens
-
-Dataset Configuration:
-image:images/data-set-configuration.png[dataset]
-
-
-Order Items by Category:
-image:images/tab-sheet1.png[sheet1]
-
-
-Average Total Discount by Category and State:
-image:images/tab-sheet2.png[sheet2]
-
-
-11 - Allow Access to HAWQ from Outside the VM
+10 - Allow Access to HAWQ from Outside the VM
 
 Edit this file below.  Add the DHCP range from the fusion file (dhcpd.conf):
 
@@ -279,6 +260,27 @@ host     all         gpadmin         172.16.111.1/24        trust
 host     all         gpadmin         ::1/128       trust
 host     all         gpadmin         fe80::250:56ff:fea0:7001/128       trust
 ----
+
+== 11 - Install Tableau Locally
+
+. Install link:https://www.tableau.com/products/desktop/download[Tableau Desktop]
+. Install the link:http://www.tableau.com/support/drivers#mac-greenplum[Pivotal Greenplum Driver for Tableau]
+. Get the license key from Dave
+. Open the link:hawq_demo.twb[HAWQ Demo Workbook] in Tableau
+. Get familiar with the following screens
+
+Dataset Configuration:
+image:images/data-set-configuration.png[dataset]
+
+
+Order Items by Category:
+image:images/tab-sheet1.png[sheet1]
+
+
+Average Total Discount by Category and State:
+image:images/tab-sheet2.png[sheet2]
+
+
 
 = Troubleshooting
 Things can go wrong...
