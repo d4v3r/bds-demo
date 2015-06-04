@@ -104,7 +104,9 @@ CREATE external TABLE tweet_pxf(
   FORMAT 'CSV' LOG ERRORS INTO tweet_err SEGMENT REJECT LIMIT 1000;
 ----
 
-Different queries can be run to show ANSI SQL compliance:
+Different queries can be run to show ANSI SQL compliance.
+
+Now move to the _HAWQ_ tab of your terminal group.  Start the psql client:
 [source,sql]
 ----
 

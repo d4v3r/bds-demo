@@ -26,6 +26,8 @@ Also make sure that the IP address that you assign is outside of the range used 
 
 In most cases, restarting Fusion is enough, but if you don't get an IPv4 IP address then also reboot your machine.
 
+Also make the entry after the "DO NOT MODIFY SECTION".  The article above states to do it preceding the "DO NOT MODIFY SECTION" but that is incorrect or at the very least sloppy.
+
 == 3 - Edit VM Hosts File
 
 Edit the hosts file on the VM and make certain that the following host names resolve to your new static IP address:
