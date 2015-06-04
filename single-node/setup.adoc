@@ -318,5 +318,5 @@ $ gpstart -a
 
 [source,bash]
 ----
-sudo chmod a+rw /tmp/gphdtmp
+sudo chmod -R a+rw /tmp/gphdtmp
 ----
